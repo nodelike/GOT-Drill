@@ -1,8 +1,8 @@
 function countAllPeople(houses){
     try {
-        let result = houses.reduce( (acc, house) => {
-            acc += house.people.length
-            return acc;
+        let result = houses.reduce( (accumulator, house) => {
+            accumulator += house.people.length
+            return accumulator;
         }, 0);
 
         return result;

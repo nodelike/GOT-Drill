@@ -1,12 +1,13 @@
 function peopleNameOfAllHouses(houses){
     try{
-        let result = {}
-        houses.forEach( house => {
+        let result = houses.reduce( (accumulator, house) => {
             let people = house.people.map( person => {
                 return person.name;
             });
-            result[house.name] = people;
-        });
+            accumulator[house.name] = people;
+
+            return accumulator;
+        }, {});
         
         return result;
     } catch(error) {

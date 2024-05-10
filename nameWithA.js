@@ -1,12 +1,12 @@
 function nameWithA(houses){
     try{
-        let people = houses.reduce( (acc, house) => {
+        let people = houses.reduce( (accumulator, house) => {
             house.people.forEach( person => {
                 if(person.name.toLowerCase().includes("a")){
-                    acc.push(person.name)
+                    accumulator.push(person.name)
                 }
             });
-            return acc;
+            return accumulator;
         }, []);
         
         return people;

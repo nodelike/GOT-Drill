@@ -1,15 +1,16 @@
 function surnameWithS(houses){
     try{
-        let people = []
-    
-        houses.forEach( house => {
+        let people = houses.reduce( (accumulator, house) => {
             house.people.forEach( person => {
                 let name = person.name.split(" ")
                 if(name[name.length-1].includes("S")){
-                    people.push(person.name)
+                    accumulator.push(person.name)
                 }
             });
-        });
+
+            return accumulator;
+        }, []);
+    
         return people;
     } catch(error) {
         console.log(`Invalid input. ${error}`)

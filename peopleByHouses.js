@@ -1,11 +1,12 @@
 function peopleByHouses(houses){
     try{
-        let counts = {}
-    
-        houses.forEach( house => {
+        let counts = houses.reduce( (accumulator, house) => {
             let people = house.people.length
-            counts[house.name] = people
-        });
+            accumulator[house.name] = people
+
+            return accumulator
+        }, {});
+        
         return counts;
     } catch(error) {
         console.log(`Invalid input. ${error}`)
